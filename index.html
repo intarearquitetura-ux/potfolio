@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Intare Arquitetura — projetos de varejo e ambientes comerciais, metodologia BIM, visualização 3D e portfólio.">
+<title>intare arquitetura — portfólio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Work+Sans:wght@300;400;500&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F6F1E7;
+    --cream-2:#EFE8D9;
+    --navy:#3B3A78;
+    --navy-deep:#2A2959;
+    --coral:#E4674B;
+    --olive:#AEBB4E;
+    --ink:#3A3630;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    overflow-x:hidden;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important;}
+  }
+
+  /* ---------- centered brand header ---------- */
+  header{
+    position:relative;
+    z-index:3;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    padding:32px 24px 0;
+  }
+  .skyline{width:90px; height:75px; margin-bottom:3px;}
+  .skyline path{
+    fill:none;
+    stroke-width:5;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    stroke-dasharray:400;
+    stroke-dashoffset:400;
+    animation:draw 1.6s ease forwards;
+  }
+  .s-coral{stroke:var(--coral); animation-delay:0.1s;}
+  .s-navy{stroke:var(--navy); animation-delay:0.35s;}
+  .s-olive{stroke:var(--olive); animation-delay:0.6s;}
+
+  @keyframes draw{to{stroke-dashoffset:0;}}
+
+  .wordmark{
+    font-family:'Jost', sans-serif;
+    font-weight:500;
+    font-size:1.8rem;
+    letter-spacing:0.22em;
+    color:var(--navy);
+    margin-top:2px;
+    opacity:0;
+    animation:fadeUp 0.8s ease forwards;
+    animation-delay:1.1s;
+  }
+  .sub-word{
+    font-family:'Jost', sans-serif;
+    font-weight:300;
+    font-size:0.65rem;
+    letter-spacing:0.5em;
+    text-transform:lowercase;
+    color:var(--ink);
+    opacity:0;
+    margin-top:1px;
+    margin-left:0.5em;
+    animation:fadeUp 0.8s ease forwards;
+    animation-delay:1.3s;
+  }
+  .site-nav{
+    margin-top:26px;
+    padding:12px 18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px 24px;
+    flex-wrap:wrap;
+    border-top:1px solid rgba(59,58,120,.14);
+    border-bottom:1px solid rgba(59,58,120,.14);
+  }
+  .site-nav a{
+    padding:5px 0;
+    color:var(--navy);
+    font-family:'Jost',sans-serif;
+    font-size:.7rem;
+    font-weight:500;
+    letter-spacing:.13em;
+    text-decoration:none;
+    text-transform:uppercase;
+    transition:color .2s ease;
+  }
+  .site-nav a:hover{color:var(--coral);}
+  .site-nav a:focus-visible{outline:2px solid var(--coral);outline-offset:4px;border-radius:2px;}
+
+  /* ---------- hero / capa ---------- */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:0 24px;
+    z-index:2;
+  }
+  .eyebrow{font-family:'Jost',sans-serif;font-size:.75rem;letter-spacing:.32em;text-transform:uppercase;color:var(--coral);font-weight:500;opacity:0;animation:fadeUp .8s ease forwards;animation-delay:.2s;}
+  h1.cover-word{font-family:'Jost',sans-serif;font-weight:300;font-size:clamp(3.6rem,13vw,8.5rem);letter-spacing:.04em;color:var(--navy-deep);line-height:1;margin-top:14px;opacity:0;animation:fadeUp .9s ease forwards;animation-delay:.4s;}
+  h1.cover-word em{font-style:normal;font-weight:600;color:var(--coral);}
+  .cover-rule{width:64px;height:3px;background:var(--olive);border-radius:3px;margin-top:26px;opacity:0;animation:fadeUp .8s ease forwards;animation-delay:.65s;}
+  p.cover-lede{margin-top:24px;font-size:1.02rem;line-height:1.7;max-width:42ch;opacity:0;animation:fadeUp .8s ease forwards;animation-delay:.8s;}
+  .cover-services{margin-top:22px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;font-family:'Jost',sans-serif;font-size:.78rem;letter-spacing:.05em;color:var(--navy);opacity:0;animation:fadeUp .8s ease forwards;animation-delay:.95s;}
+  .cover-services span{padding:6px 16px;border:1px solid rgba(59,58,120,.25);border-radius:999px;}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+  .scroll-cue{position:absolute;bottom:38px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;text-decoration:none;color:var(--ink);opacity:0;animation:fadeUp .8s ease forwards,bob 2.4s ease-in-out infinite;animation-delay:1.2s,1.2s;}
+  .scroll-cue span{font-family:'Jost',sans-serif;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;opacity:.65;}
+  .scroll-cue svg{width:16px;height:16px;opacity:.65;}
+  @keyframes bob{0%,100%{transform:translate(-50%,0);}50%{transform:translate(-50%,8px);}}
+
+  /* ---------- about / quem somos ---------- */
+  .about{
+    position:relative;
+    z-index:2;
+    max-width:1080px;
+    margin:0 auto;
+    padding:120px 24px 0;
+    scroll-margin-top:24px;
+  }
+  .section-kicker{
+    font-family:'Jost',sans-serif;
+    font-size:.72rem;
+    font-weight:500;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--coral);
+  }
+  .about-intro{
+    margin-top:22px;
+    display:grid;
+    grid-template-columns:minmax(260px,.78fr) minmax(0,1.22fr);
+    gap:clamp(38px,6vw,76px);
+    align-items:center;
+  }
+  .about-photo{
+    position:relative;
+    border-radius:20px;
+    overflow:hidden;
+    background:#d7d2c8;
+  }
+  .about-photo::after{
+    content:"";
+    position:absolute;
+    inset:12px;
+    border:1px solid rgba(246,241,231,.7);
+    border-radius:13px;
+    pointer-events:none;
+  }
+  .about-photo img{width:100%;height:auto;max-height:620px;object-fit:cover;object-position:center top;}
+  .about-copy h2{
+    font-family:'Jost',sans-serif;
+    font-size:clamp(2.2rem,5vw,3.6rem);
+    font-weight:300;
+    line-height:1.05;
+    color:var(--navy-deep);
+  }
+  .about-copy h2 em{font-style:normal;font-weight:600;color:var(--coral);}
+  .about-copy p{margin-top:18px;font-size:.97rem;line-height:1.72;color:#585249;}
+  .about-copy strong{color:var(--navy-deep);font-weight:600;}
+  .values-grid{
+    margin-top:54px;
+    padding:28px;
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:18px;
+    border-radius:20px;
+    background:var(--cream-2);
+  }
+  .value-card{padding:8px 14px 12px;border-left:3px solid var(--olive);}
+  .value-number{display:block;font-family:'Jost',sans-serif;font-size:.72rem;letter-spacing:.16em;color:var(--coral);}
+  .value-card h3{margin-top:8px;font-family:'Jost',sans-serif;font-size:1rem;font-weight:500;line-height:1.28;color:var(--navy-deep);text-transform:uppercase;}
+  .value-card p{margin-top:10px;font-size:.82rem;line-height:1.55;color:#625c53;}
+
+  /* ---------- services ---------- */
+  .services-section{
+    position:relative;
+    z-index:2;
+    max-width:1080px;
+    margin:0 auto;
+    padding:112px 24px 0;
+    scroll-margin-top:24px;
+  }
+  .section-head{
+    margin-top:10px;
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap:24px;
+    padding-bottom:22px;
+    border-bottom:1px solid rgba(59,58,120,.18);
+  }
+  .section-head h2{font-family:'Jost',sans-serif;font-size:clamp(2rem,4.5vw,3rem);font-weight:300;color:var(--navy-deep);}
+  .section-head p{max-width:39ch;font-size:.86rem;line-height:1.55;color:#7b7469;text-align:right;}
+  .services-grid{margin-top:34px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;}
+  .service-card{min-height:230px;padding:26px;border:1px solid rgba(59,58,120,.12);border-radius:18px;background:#fff;box-shadow:0 12px 34px rgba(42,41,89,.04);}
+  .service-card__number{display:block;font-family:'Jost',sans-serif;font-size:.68rem;letter-spacing:.16em;color:var(--coral);}
+  .service-card h3{margin-top:14px;font-family:'Jost',sans-serif;font-size:1.15rem;font-weight:500;line-height:1.25;color:var(--navy-deep);text-transform:uppercase;}
+  .service-card::before{content:"";display:block;width:42px;height:3px;margin-bottom:18px;border-radius:3px;background:var(--olive);}
+  .service-card p{margin-top:16px;font-size:.88rem;line-height:1.62;color:#625c53;}
+
+  /* ---------- projects section ---------- */
+  .projects{position:relative;z-index:2;max-width:1080px;margin:0 auto;padding:112px 24px 120px;scroll-margin-top:24px;}
+  .projects-head{display:flex;align-items:baseline;justify-content:space-between;gap:20px;flex-wrap:wrap;border-bottom:1px solid rgba(59,58,120,.18);padding-bottom:22px;}
+  .projects-head h2{font-family:'Jost',sans-serif;font-weight:400;font-size:clamp(1.6rem,4vw,2.1rem);color:var(--navy-deep);letter-spacing:.01em;}
+  .projects-head span{font-family:'Jost',sans-serif;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--coral);}
+  .projects-grid{margin-top:44px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;}
+  .project-card{aspect-ratio:4/5;border:1.5px dashed rgba(59,58,120,.3);border-radius:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:var(--navy);opacity:.75;overflow:hidden;position:relative;text-decoration:none;transition:opacity .25s ease,border-color .25s ease,background .25s ease,transform .25s ease;}
+  .project-card:hover{opacity:1;border-color:var(--coral);background:rgba(228,103,75,.05);}
+  .project-card svg{width:34px;height:34px;opacity:.55;}
+  .project-card .card-label{font-family:'Jost',sans-serif;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;}
+  .project-card--filled{align-items:stretch;justify-content:flex-end;border-style:solid;border-color:rgba(59,58,120,.12);opacity:1;background:var(--navy-deep);}
+  .project-card--filled:hover{transform:translateY(-4px);border-color:var(--coral);background:var(--navy-deep);}
+  .project-card--filled:focus-visible{outline:3px solid var(--coral);outline-offset:4px;}
+  .project-card__image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .45s ease;}
+  .project-card--filled:hover .project-card__image{transform:scale(1.035);}
+  .project-card__rotated-media{position:absolute;inset:0;overflow:hidden;background:#fff;}
+  .project-card__rotated-media img{position:absolute;top:50%;left:50%;width:auto;height:80%;max-width:none;transform:translate(-50%,-50%) rotate(90deg);transition:transform .45s ease;}
+  .project-card--filled:hover .project-card__rotated-media img{transform:translate(-50%,-50%) rotate(90deg) scale(1.035);}
+  .project-card--filled::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(42,41,89,.96) 0%,rgba(42,41,89,.52) 38%,rgba(42,41,89,.05) 70%);}
+  .project-card__content{position:relative;z-index:1;padding:24px;color:var(--cream);}
+  .project-card__eyebrow{display:block;font-family:'Jost',sans-serif;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:#f29a86;margin-bottom:7px;}
+  .project-card__title{font-family:'Jost',sans-serif;font-size:1.45rem;font-weight:500;line-height:1.15;}
+  .project-card__location{display:block;margin-top:8px;font-size:.78rem;line-height:1.45;opacity:.82;}
+  .projects-note{margin-top:40px;text-align:center;font-size:.85rem;color:#8b8578;max-width:46ch;margin-left:auto;margin-right:auto;line-height:1.6;}
+  .back-to-top{
+    position:fixed;
+    z-index:20;
+    right:clamp(14px,2.5vw,28px);
+    bottom:calc(16px + env(safe-area-inset-bottom));
+    min-height:44px;
+    padding:10px 15px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    border:1px solid rgba(246,241,231,.28);
+    border-radius:999px;
+    background:rgba(42,41,89,.92);
+    box-shadow:0 10px 28px rgba(42,41,89,.18);
+    color:var(--cream);
+    font-family:'Jost',sans-serif;
+    font-size:.68rem;
+    font-weight:500;
+    letter-spacing:.08em;
+    text-decoration:none;
+    text-transform:uppercase;
+    opacity:0;
+    pointer-events:none;
+    transform:translateY(10px);
+    transition:opacity .22s ease,transform .22s ease,background .2s ease;
+  }
+  .back-to-top.is-visible{opacity:.88;pointer-events:auto;transform:translateY(0);}
+  .back-to-top:hover{opacity:1;background:var(--coral);}
+  .back-to-top:focus-visible{opacity:1;outline:3px solid var(--olive);outline-offset:3px;}
+  .back-to-top__arrow{font-size:1rem;line-height:1;}
+  footer{position:relative;z-index:2;text-align:center;padding:30px 24px 40px;font-size:.72rem;letter-spacing:.08em;color:#B9AF9B;text-transform:uppercase;}
+  @media (max-width:860px){
+    .about-intro{grid-template-columns:1fr;}
+    .about-photo{width:min(100%,480px);margin:0 auto;}
+    .values-grid{grid-template-columns:1fr;}
+  }
+  @media (max-width:680px){
+    .projects-grid,.services-grid{grid-template-columns:1fr;}
+    .section-head{align-items:flex-start;flex-direction:column;}
+    .section-head p{text-align:left;}
+    .about,.services-section,.projects{padding-left:18px;padding-right:18px;}
+  }
+  @media (max-width:480px){
+    header{padding:24px 16px 0;}
+    .site-nav{gap:7px 16px;padding-left:8px;padding-right:8px;}
+    .site-nav a{font-size:.64rem;}
+    .hero{min-height:88vh;padding-left:18px;padding-right:18px;}
+    .cover-services{gap:8px;}
+    .cover-services span{font-size:.7rem;padding:5px 11px;}
+    .about,.services-section,.projects{padding-top:86px;}
+    .values-grid{padding:20px 14px;}
+    .service-card{min-height:0;padding:22px;}
+    .back-to-top{width:44px;padding:0;justify-content:center;border-radius:50%;}
+    .back-to-top__label{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+  }
+</style>
+</head>
+<body id="inicio">
+
+<header>
+  <svg class="skyline" viewBox="0 0 180 150" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path class="s-coral" d="M14 128 V96 C14 84 22 74 34 74 C46 74 54 84 54 96 V128" />
+    <path class="s-navy" d="M50 128 V38 C50 28 58 20 66 12 C74 20 82 28 82 38 V128" />
+    <path class="s-olive" d="M78 128 V66 C78 56 88 50 96 42 C104 50 114 56 114 66 V128" />
+  </svg>
+  <div class="wordmark">i n t a r e</div>
+  <div class="sub-word">arquitetura</div>
+  <nav class="site-nav" aria-label="Navegação principal">
+    <a href="#inicio">Início</a>
+    <a href="#quem-somos">Quem somos</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#projetos">Projetos</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="eyebrow">Nosso trabalho</div>
+  <h1 class="cover-word">port<em>fólio</em></h1>
+  <div class="cover-rule"></div>
+  <p class="cover-lede">Uma seleção dos projetos, modelagens e renderizações desenvolvidos pela Intare Arquitetura — onde cada ideia ganha forma antes de sair do papel.</p>
+  <div class="cover-services">
+    <span>Levantamento cadastral</span>
+    <span>Estudo preliminar</span>
+    <span>Projeto executivo</span>
+    <span>Visualização arquitetônica 3D</span>
+  </div>
+  <a href="#quem-somos" class="scroll-cue"><span>Conheça a Intare</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></a>
+</section>
+
+<section class="about" id="quem-somos">
+  <p class="section-kicker">Intare Arquitetura</p>
+  <div class="about-intro">
+    <figure class="about-photo">
+      <img src="assets/images/institucional/perfil-intare.png" alt="Retrato da arquiteta da Intare Arquitetura" loading="lazy">
+    </figure>
+    <div class="about-copy">
+      <h2>Quem <em>somos</em></h2>
+      <p>A <strong>Intare Arquitetura</strong> valoriza a boa arquitetura com processos simples e definidos, tornando o caminho mais claro e eficiente para clientes e parceiros.</p>
+      <p>Com mais de <strong>6 anos de atuação no mercado de varejo e projetos comerciais</strong>, acreditamos que a arquitetura é diálogo: unimos tecnologia e criatividade para transformar ideias em soluções funcionais, inovadoras e personalizadas.</p>
+      <p>Trabalhamos com a metodologia <strong>BIM</strong>, que permite integrar informações, reduzir erros e otimizar resultados, oferecendo projetos de alta performance para o setor de <strong>varejo e ambientes comerciais</strong>.</p>
+    </div>
+  </div>
+  <div class="values-grid">
+    <article class="value-card">
+      <span class="value-number">01</span>
+      <h3>Experiência na ponta do dedo</h3>
+      <p>Com ampla experiência em varejo e projetos comerciais, entregamos soluções completas e digitais. Utilizamos maquetes 3D interativas acessíveis no computador ou celular, facilitando a visualização e comunicação com o cliente.</p>
+    </article>
+    <article class="value-card">
+      <span class="value-number">02</span>
+      <h3>Tecnologia em projeto</h3>
+      <p>Aplicamos <strong>BIM</strong> em todas as etapas, garantindo compatibilização entre disciplinas, redução de retrabalhos e maior assertividade nos prazos e entregas.</p>
+    </article>
+    <article class="value-card">
+      <span class="value-number">03</span>
+      <h3>Referência em gestão e estruturação</h3>
+      <p>Aliando experiência prática no setor de varejo e comercial à tecnologia BIM, estruturamos projetos com eficiência e organização, oferecendo soluções que conectam criatividade, inovação e resultado.</p>
+    </article>
+  </div>
+</section>
+
+<section class="services-section" id="servicos">
+  <p class="section-kicker">Como trabalhamos</p>
+  <div class="section-head">
+    <h2>Serviços prestados</h2>
+    <p>Etapas integradas para transformar necessidades em projetos claros, precisos e preparados para execução.</p>
+  </div>
+  <div class="services-grid">
+    <article class="service-card">
+      <span class="service-card__number">01</span>
+      <h3>Levantamento cadastral</h3>
+      <p>Etapa inicial onde registramos todas as medidas e condições existentes do espaço, garantindo precisão para o desenvolvimento do projeto.</p>
+    </article>
+    <article class="service-card">
+      <span class="service-card__number">02</span>
+      <h3>Estudo preliminar de arquitetura</h3>
+      <p>Fase de concepção em que traduzimos as necessidades do cliente em soluções criativas, funcionais e alinhadas à identidade da marca.</p>
+    </article>
+    <article class="service-card">
+      <span class="service-card__number">03</span>
+      <h3>Projeto executivo de arquitetura</h3>
+      <p>Detalhamento técnico completo que orienta a execução da obra, assegurando viabilidade, qualidade e fidelidade ao conceito aprovado.</p>
+    </article>
+    <article class="service-card">
+      <span class="service-card__number">04</span>
+      <h3>Visualização arquitetônica 3D</h3>
+      <p>Representação realista do projeto que permite ao cliente vivenciar o ambiente antes da obra, facilitando decisões assertivas.</p>
+    </article>
+  </div>
+</section>
+
+<section class="projects" id="projetos">
+  <div class="projects-head"><h2>Projetos</h2><span>4 projetos</span></div>
+  <div class="projects-grid">
+    <!-- Cada cliente terá um card próprio. Os placeholders serão substituídos conforme as imagens forem enviadas. -->
+    <a class="project-card project-card--filled" data-client="kfc" href="projetos/kfc.html" aria-label="Ver projeto Loja KFC">
+      <img class="project-card__image" src="assets/images/clientes/kfc/perspectiva-salao.png" alt="Perspectiva interna do salão da Loja KFC" loading="lazy">
+      <span class="project-card__content">
+        <span class="project-card__title">Loja KFC</span>
+        <span class="project-card__location">Av. Nove de Julho · Ribeirão Preto</span>
+      </span>
+    </a>
+    <a class="project-card project-card--filled" data-client="kopenhagen" href="projetos/kopenhagen.html" aria-label="Ver projeto Loja Kopenhagen">
+      <img class="project-card__image" src="assets/images/clientes/kopenhagen/render-02.png" alt="Render da fachada da Loja Kopenhagen" loading="lazy">
+      <span class="project-card__content">
+        <span class="project-card__title">Loja Kopenhagen</span>
+        <span class="project-card__location">Shopping Santa Cruz · São Paulo</span>
+      </span>
+    </a>
+    <a class="project-card project-card--filled" data-client="giramille" href="projetos/giramille.html" aria-label="Ver projeto Sede Giramille">
+      <span class="project-card__rotated-media">
+        <img src="assets/images/clientes/giramille/layout.png" alt="Layout da Sede Giramille rotacionado em 90 graus" loading="lazy">
+      </span>
+      <span class="project-card__content">
+        <span class="project-card__title">Sede Giramille</span>
+        <span class="project-card__location">São Paulo</span>
+      </span>
+    </a>
+    <a class="project-card project-card--filled" data-client="renderizacao-e-3d" href="projetos/renderizacao-e-3d.html" aria-label="Ver projeto Renderização e 3D">
+      <img class="project-card__image" src="assets/images/clientes/renderizacao-e3d/img-4.png" alt="Renderização de um dormitório" loading="lazy">
+      <span class="project-card__content">
+        <span class="project-card__title">Renderização e 3D</span>
+      </span>
+    </a>
+  </div>
+  <p class="projects-note">Novos projetos e clientes serão adicionados ao portfólio em breve.</p>
+</section>
+
+<a class="back-to-top" href="#inicio" aria-label="Voltar ao início" aria-hidden="true" tabindex="-1">
+  <span class="back-to-top__arrow" aria-hidden="true">↑</span>
+  <span class="back-to-top__label">Voltar ao início</span>
+</a>
+
+<footer>Intare Arquitetura · São José do Rio Preto — SP</footer>
+<script>
+  const backToTop = document.querySelector('.back-to-top');
+  const updateBackToTop = () => {
+    const shouldShow = window.scrollY > Math.max(520, window.innerHeight * 0.65);
+    backToTop.classList.toggle('is-visible', shouldShow);
+    backToTop.setAttribute('aria-hidden', String(!shouldShow));
+    backToTop.tabIndex = shouldShow ? 0 : -1;
+  };
+  window.addEventListener('scroll', updateBackToTop, { passive: true });
+  window.addEventListener('resize', updateBackToTop);
+  updateBackToTop();
+</script>
+</body>
+</html>
