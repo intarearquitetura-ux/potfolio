@@ -276,17 +276,60 @@
   .back-to-top:hover{opacity:1;background:var(--coral);}
   .back-to-top:focus-visible{opacity:1;outline:3px solid var(--olive);outline-offset:3px;}
   .back-to-top__arrow{font-size:1rem;line-height:1;}
+  .contact-section{
+    position:relative;
+    z-index:2;
+    padding:96px 24px;
+    background:var(--navy-deep);
+    color:var(--cream);
+    scroll-margin-top:24px;
+  }
+  .contact-inner{width:min(1120px,100%);margin:0 auto;}
+  .contact-section .section-kicker{color:#D2C7B5;}
+  .contact-intro{
+    display:grid;
+    grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
+    gap:clamp(44px,8vw,104px);
+    align-items:end;
+  }
+  .contact-copy h2{
+    margin-top:10px;
+    font-family:'Jost',sans-serif;
+    font-size:clamp(2.2rem,5vw,4rem);
+    font-weight:300;
+    line-height:1.05;
+    letter-spacing:.01em;
+  }
+  .contact-copy h2 em{color:var(--coral);font-family:'Cormorant Garamond',serif;font-weight:500;}
+  .contact-copy p{max-width:590px;margin-top:22px;color:#E3DACC;font-size:1rem;line-height:1.65;}
+  .contact-list{display:grid;border-top:1px solid rgba(246,241,231,.25);}
+  .contact-item{
+    display:grid;
+    grid-template-columns:104px minmax(0,1fr) auto;
+    gap:18px;
+    align-items:center;
+    padding:19px 0;
+    border-bottom:1px solid rgba(246,241,231,.25);
+    color:var(--cream);
+    text-decoration:none;
+  }
+  .contact-item__label{font-size:.67rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#CFC4B3;}
+  .contact-item__value{font-family:'Jost',sans-serif;font-size:clamp(.94rem,2vw,1.08rem);font-style:normal;overflow-wrap:anywhere;}
+  .contact-item__arrow{font-size:1.15rem;color:var(--coral);transition:transform .2s ease;}
+  a.contact-item:hover .contact-item__arrow{transform:translate(3px,-3px);}
+  a.contact-item:focus-visible{outline:2px solid var(--coral);outline-offset:6px;}
   footer{position:relative;z-index:2;text-align:center;padding:30px 24px 40px;font-size:.72rem;letter-spacing:.08em;color:#B9AF9B;text-transform:uppercase;}
   @media (max-width:860px){
     .about-intro{grid-template-columns:1fr;}
     .about-photo{width:min(100%,480px);margin:0 auto;}
     .values-grid{grid-template-columns:1fr;}
+    .contact-intro{grid-template-columns:1fr;align-items:start;}
   }
   @media (max-width:680px){
     .projects-grid,.services-grid{grid-template-columns:1fr;}
     .section-head{align-items:flex-start;flex-direction:column;}
     .section-head p{text-align:left;}
-    .about,.services-section,.projects{padding-left:18px;padding-right:18px;}
+    .about,.services-section,.projects,.contact-section{padding-left:18px;padding-right:18px;}
   }
   @media (max-width:480px){
     header{padding:24px 16px 0;}
@@ -298,6 +341,8 @@
     .about,.services-section,.projects{padding-top:86px;}
     .values-grid{padding:20px 14px;}
     .service-card{min-height:0;padding:22px;}
+    .contact-section{padding-top:76px;padding-bottom:76px;}
+    .contact-item{grid-template-columns:82px minmax(0,1fr) auto;gap:10px;}
     .back-to-top{width:44px;padding:0;justify-content:center;border-radius:50%;}
     .back-to-top__label{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
   }
@@ -314,10 +359,10 @@
   <div class="wordmark">i n t a r e</div>
   <div class="sub-word">arquitetura</div>
   <nav class="site-nav" aria-label="Navegação principal">
-    <a href="#inicio">Início</a>
     <a href="#quem-somos">Quem somos</a>
     <a href="#servicos">Serviços</a>
     <a href="#projetos">Projetos</a>
+    <a href="#contato">Contato</a>
   </nav>
 </header>
 
@@ -432,6 +477,35 @@
     </a>
   </div>
   <p class="projects-note">Novos projetos e clientes serão adicionados ao portfólio em breve.</p>
+</section>
+
+<section class="contact-section" id="contato">
+  <div class="contact-inner">
+    <p class="section-kicker">Vamos conversar</p>
+    <div class="contact-intro">
+      <div class="contact-copy">
+        <h2>Seu próximo projeto pode <em>começar aqui.</em></h2>
+        <p>Entre em contato para conversar sobre seu espaço, suas necessidades e como a Intare Arquitetura pode transformar suas ideias em um projeto claro e funcional.</p>
+      </div>
+      <address class="contact-list">
+        <a class="contact-item" href="https://wa.me/5513991282334?text=Ol%C3%A1%21%20Conheci%20o%20trabalho%20da%20Intare%20pelo%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener noreferrer" aria-label="Conversar com a Intare pelo WhatsApp">
+          <span class="contact-item__label">WhatsApp</span>
+          <span class="contact-item__value">(13) 99128-2334</span>
+          <span class="contact-item__arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="contact-item" href="mailto:intare.arquitetura@gmail.com" aria-label="Enviar e-mail para a Intare Arquitetura">
+          <span class="contact-item__label">E-mail</span>
+          <span class="contact-item__value">intare.arquitetura@gmail.com</span>
+          <span class="contact-item__arrow" aria-hidden="true">↗</span>
+        </a>
+        <div class="contact-item">
+          <span class="contact-item__label">Localização</span>
+          <span class="contact-item__value">São José do Rio Preto — SP</span>
+          <span class="contact-item__arrow" aria-hidden="true">•</span>
+        </div>
+      </address>
+    </div>
+  </div>
 </section>
 
 <a class="back-to-top" href="#inicio" aria-label="Voltar ao início" aria-hidden="true" tabindex="-1">
