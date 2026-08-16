@@ -1,0 +1,8 @@
+Crie uma pasta separada para cada cliente neste diretório.
+
+Exemplo:
+nome-do-cliente/capa.jpg
+nome-do-cliente/projeto-01.jpg
+nome-do-cliente/projeto-02.jpg
+
+Prefira nomes de arquivos sem espaços, sem acentos e escritos em letras minúsculas.
